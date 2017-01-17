@@ -1,0 +1,33 @@
+#contenidoPagina{
+    /*margin-left:25%;*/
+}
+
+#contenidoSuperior{ 
+}
+#linea{
+    position: relative; 
+    background: #e11a37;
+    color: grey;
+    margin-left: 25%;
+}
+#lineaDesplazamiento{
+    position: absolute;
+    top: 42.4em;    
+    width: 46.134em;
+    border: 3px solid #e11a37; 
+    border-radius: 20em;  
+    text-align: center; 
+}
+.circle {
+  position: absolute;
+  left: 20%;
+  top: 100%;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #e11a37;
+  line-height: 500px;
+  text-align: center;
+  background: #e11a37;
+}
