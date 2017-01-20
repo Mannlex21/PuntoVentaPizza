@@ -1,60 +1,184 @@
-#contenidoPagina{
-    /*margin-left:25%;*/
-}
 
-#contenidoSuperior{ 
+#contenedorPrincipal{
+  width: 96em;
+  height: 100%;
+}
+.contenidoPaginaMin{
+    /*margin-left:25%;*/ 
+    position: absolute;
+    top: 0;
+    left: 15.354em;
+    width: 80.46em;
+    height: 100%; 
+    /*margin-left: 15.33em;*/
+}
+.contenidoPaginaMax{
+    /*margin-left:25%;*/ 
+    position: absolute;
+    top: 0;
+    left: 3.687em;
+    width: 92.312em;
+    height: 100%; 
+    /*margin-left: 15.33em;*/
+}
+.centradoMin{
+    position: relative;
+    width: 80.46em;
+    height:100%;
+
+}
+.centradoMax{
+    position: relative;
+    width: 92.312em;
+    height:100%;
+
 }
 #linea{
-    position: relative; 
-    background: #e11a37;
-    color: grey;
-    margin-left: 25%;
+    /*position: relative; */
 }
 #lineaDesplazamiento{
-    position: absolute;
-    top: 7.9em;
-    left: 8em;    
-    width: 35em;
-    border: 0.14em solid #e11a37; 
-    border-radius: 20em;  
-    text-align: center; 
+  background: #e11a37;
+  position: absolute;   
+  top: 16.739em;
+  left: 17.661em;  
+  width: 46.26em;
+  height: 0.3em;
+  border: none;
+    
 }
 .circleLeft {
   position: absolute;
-  left: 2.2em;
-  top: 2.2em;
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: 50%;
-  font-size: 50px;
+  left: 17em;
+  top: 16.012em;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 100%;
   color: #e11a37;
   line-height: 500px;
   text-align: center;
   background: #e11a37;
+}
+#tamMasa{
+  font-family: GothamBold;
+ position: absolute;
+  top: 18.5em;
+  left: 13.76em;
+  color: #e11a37;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer; 
 }
 .circleRight {
   position: absolute;
-  right: 6em; 
-  top: 2.2em;
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: 50%;
-  font-size: 50px;
-  color: #e11a37;
+  left: 63.248em;
+  top: 16.012em;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 100%;
+  color: #036591;
   line-height: 500px;
   text-align: center;
-  background: #e11a37;
+  background: #036591;
 }
-.circleCenter{
-  position: absolute;
-  left: 8em; 
-  top: 2.2em;
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: 50%;
-  font-size: 50px;
+#salQueso{
+  font-family: GothamBold;
+ position: absolute;
+  top: 18.5em;
+  left: 38.9em;
   color: #e11a37;
+  text-align: center;
+  cursor: pointer; 
+}
+.circleCenter {
+  position: absolute;
+  top: 16.225em;
+  left: 40.81em;
+  bottom: 43.774em;
+  right: 39.674em;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 100%;
+  color: #036591;
   line-height: 500px;
   text-align: center;
-  background: #e11a37;
+  background: #036591;
+}
+#ingre{
+  font-family: GothamBold;
+ position: absolute;
+  top: 18.5em;
+  left: 61.202em;
+  color: #e11a37;
+  text-align: center;
+  cursor: pointer; 
+}
+#tamano{
+  font-family: GothamMedium;
+ position: absolute;
+  top:29.821em;
+  left: 54.860em;
+  color: black;
+  text-align: left;
+}
+#selectTamano{
+ position: absolute;
+  top:28.728em;
+  left: 61.893em;
+  width: 14.2em;
+  height: 2.8em;
+  color: white;
+  text-align: center;
+  border-radius: 0.5em;
+  border: none;
+  background: #036591;
+}
+#masa{
+  font-family: GothamMedium;
+ position: absolute;
+  top:34.851em;
+  left: 56.063em;
+  color: black;
+  text-align: left;
+}
+#selectMasa{
+ position: absolute;
+  top:34.046em;
+  left: 61.893em;
+  width: 14.2em;
+  height: 2.8em;
+  color: white;
+  text-align: center;
+  border-radius: 0.5em;
+  border: none;
+  background: #036591;
+}
+#botonAceptar{
+ position: absolute;
+  top:40.547em;
+  left: 54.307em;
+  width: 21.6em;
+  height: 2.8em;
+  color: white;
+  text-align: center;
+  border-radius: 0.5em;
+  border: none;
+  background: #4caf4c;
+}
+#logo{
+  position: absolute;
+  top: 5.178em;
+  left: 37.558em;
+}
+#imgLogo{
+  width: 6.522em;
+ height:6.164em;
+}
+#pizzaimg{
+  position: absolute;
+  left: 4.195em;
+  top: 25.525em;
+}
+#imgPizza{
+  width: 42.62em;
+  height: 20.515em;
 }

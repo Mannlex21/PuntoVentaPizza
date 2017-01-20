@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Punto de venta</title>
+		<link rel="stylesheet" href="css/general/barra_lateral.css">
+		<link rel="stylesheet" href="css/index/contenido_pagina.css">
+		<link rel="stylesheet" href="css/general/pixeles.css">
+		
+		<!--SCRIPTS-->
+		<script type="text/javascript" src="js/general/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="js/general/resize.js"></script>
+		<script type="text/javascript" src="js/general/barra_lateral.js"></script>
+		<script type="text/javascript" src="js/cargado/barra_lateral.js"></script>
+		<!--SCRIPTS-->
+		
+	</head>
+	<body>
+	<div id="contenedorPrincipal" class="quincePixeles">
+		<div id="sidebar" class="quincePixeles sidebarMax">
+			<figure id="imagen" class="quincePixeles" >
+				<img src="objetos/5-06.png" width="30em" height="30em">
+			</figure>
+			<a href="#" id="contraer" class="quincePixeles ">Contraer</a>		
+		</div>
+		<!--Contenido Pagina-->
+		<div id="contenidoPagina" class="quincePixeles contenidoPaginaMin">
+			<div id="centrado" class="quincePixeles centradoMin">
+				<div id="contenidoSuperior" class="quincePixeles">
+					
+				</div>
+				<div id="linea" class="quincePixeles">
+					<hr id="lineaDesplazamiento" class="quincePixeles"/>	
+					<div class="circleLeft quincePixeles"></div>
+					<p id="tamMasa" class="quincePixeles">Tamaño y masa</p>
+					<div class="circleRight quincePixeles"></div>
+					<p id="salQueso" class="quincePixeles">Salsa y queso</p>
+					<div class="circleCenter quincePixeles"></div>
+					<p id="ingre" class="quincePixeles">Ingredientes</p>
+				</div>
+				<div class="quincePixeles">
+					<p id="tamano" class="quincePixeles">Tamaño:</p>
+					<select id="selectTamano" class="quincePixeles">
+					  <option value="volvo">Chica</option>
+					  <option value="saab">Mediana</option>
+					  <option value="mercedes">Grande</option>					  
+					</select>
+				</div>
+				<div class="quincePixeles">
+					<p id="masa" class="quincePixeles">Masa:</p>
+					<select id="selectMasa" class="quincePixeles">
+					  <option value="volvo">Original</option>
+					  <option value="saab">Mediana</option>
+					  <option value="mercedes">Grande</option>					  
+					</select>					
+				</div>
+				<div class="quincePixeles">
+					<button id="botonAceptar" class="quincePixeles">Aceptar</button>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+		
+	</body>
+</html>

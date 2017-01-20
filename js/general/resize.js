@@ -1,10 +1,13 @@
-$(document).on('ready',function(){
+/*$(document).on('ready',function(){
 	cargado();
+});*/
+$( document ).ready(function() {
+    cargado();
 });
 
 $(window).resize(function(){
 	$anchoInicial = window.innerWidth;
-	$escala = $anchoInicial / 1080;
+	$escala = $anchoInicial / 1440;
 	$docePixeles = $escala * 12;
 	$trecePixeles = $escala * 13;
 	$catorcePixeles = $escala * 14;
@@ -46,7 +49,7 @@ $(window).resize(function(){
 
 function cargado(){
 	$anchoInicial = window.innerWidth;
-	$escala = $anchoInicial / 1080;
+	$escala = $anchoInicial / 1440;
 	$docePixeles = $escala * 12;
 	$trecePixeles = $escala * 13;
 	$catorcePixeles = $escala * 14;

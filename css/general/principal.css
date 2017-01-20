@@ -1,0 +1,45 @@
+/* ESTE ARCHIVO TIENE LOS ESTILOS GENERALES DE*/
+
+@font-face {
+  font-family: 'GothamThin';
+  src: url('../../objetos/fuentes/Gotham-Thin.otf');
+}
+
+@font-face {
+  font-family: 'GothamLight';
+  src: url('../../objetos/fuentes/Gotham-Light.otf');
+}
+
+@font-face {
+  font-family: 'GothamBook';
+  src: url('../../objetos/fuentes/Gotham-Book.otf');
+}
+
+@font-face {
+  font-family: 'GothamBold';
+  src: url('../../objetos/fuentes/Gotham-Bold.otf');
+}
+
+@font-face {
+  font-family: 'GothamMedium';
+  src: url('../../objetos/fuentes/Gotham-Medium.otf');
+}
+
+@font-face {
+  font-family: 'GothamBlack';
+  src: url('../../objetos/fuentes/Gotham-Black.otf');
+}
+
+/* ETIQUETAS */
+body, figure{
+	margin: 0px;
+	padding: 0px;
+
+}
+
+body{
+  background: #f6f6f6;
+	font-family: GothamBook;
+  font-size: 0;
+}
+
