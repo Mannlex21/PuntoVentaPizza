@@ -1,115 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head>
 		<title>Punto de venta</title>
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/general/barra_lateral.css">
 		<link rel="stylesheet" href="css/index/contenido_pagina.css">
 		<link rel="stylesheet" href="css/general/pixeles.css">
+		<link rel="stylesheet" href="css/general/animate.css">
+		<link rel="stylesheet" href="css/index/cambioPagina.css">
+		<link rel="stylesheet" href="css/index/ingredientes.css">
+		<link rel="stylesheet" href="css/otrosAlimentos/otrosAlimentos.css">
+
 		
 		<!--SCRIPTS-->
 		<script type="text/javascript" src="js/general/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="js/general/resize.js"></script>
 		<script type="text/javascript" src="js/general/barra_lateral.js"></script>
+		<script type="text/javascript" src="js/general/index.js"></script>
+		<script type="text/javascript" src="js/general/salsa-queso.js"></script>
+		<script type="text/javascript" src="js/general/tamMasa.js"></script>
+		<script type="text/javascript" src="js/general/ingre.js"></script>
+		<script type="text/javascript" src="js/general/otrosAlimentos.js"></script>
+		
+		<!--ESCUCHAS-->
+		<script type="text/javascript" src="js/cargado/carrito.js"></script>
+		<script type="text/javascript" src="js/cargado/promociones.js"></script>
+		<script type="text/javascript" src="js/cargado/bebidas.js"></script>
+		<script type="text/javascript" src="js/cargado/otrosAlimentos.js"></script>
+		<script type="text/javascript" src="js/cargado/index.js"></script>
+		<script type="text/javascript" src="js/cargado/salsa-queso.js"></script>
+		<script type="text/javascript" src="js/cargado/tamMasa.js"></script>
+		<script type="text/javascript" src="js/cargado/ingre.js"></script>
 		<script type="text/javascript" src="js/cargado/barra_lateral.js"></script>
 		<!--SCRIPTS-->
 		
 	</head>
 	<body>
+	<span id="bandera">0</span>
 	<div id="contenedorPrincipal" class="quincePixeles">
-		<div id="sidebar" class="quincePixeles sidebarMax">
-			<!-- Menu del sidebar -->
-			<div id="menu" class="quincePixeles">
-				<a href="#" id="promociones" class="quincePixeles ">
-					<figure id="imagenPromociones" class="quincePixeles" >
-						<img src="objetos/1-06.png">
-					</figure>Promociones
-				</a>
-				<a href="#" id="alimentos" class="quincePixeles ">
-					<figure id="imagenAlimentos" class="quincePixeles" >
-						<img src="objetos/4-06.png">
-					</figure>Alimentos y bebidas
-				</a>
-				<a href="#" id="pizza" class="quincePixeles ">
-					<figure id="imagenPizza" class="quincePixeles" >
-						<img src="objetos/6-06.png">
-					</figure>Pizza
-				</a>
-				<a href="#" id="otros" class="quincePixeles ">
-					<figure id="imagenOtros" class="quincePixeles" >
-						<img src="objetos/4-06.png">
-					</figure>Otros alimentos
-				</a>
-				<a href="#" id="bebidas" class="quincePixeles ">
-					<figure id="imagenBebidas" class="quincePixeles" >
-						<img src="objetos/3-06.png">
-					</figure>Bebidas
-				</a>
-				<a href="#" id="miCarrito" class="quincePixeles ">
-					<figure id="imagenCarrito" class="quincePixeles" >
-						<img src="objetos/2-06.png">
-					</figure>Mi carrito
-				</a>
-			</div>
-			<!-- Fin Menu del sidebar -->
+		<!--INICIO SIDEBAR-->
+		<div id="sidebar" class="quincePixeles sidebarMax"></div>
+		<!--FIN SIDEBAR-->
 
-			<!-- Cerrar y Config sidebar -->
-			<div id="inferiorSidebar" class="quincePixeles inferiorSidebar">
-				<a href="#" id="contraer" class="quincePixeles ">
-					<figure id="imagenContraer" class="quincePixeles" >
-						<img src="objetos/5-06.png" >
-					</figure>Contraer
-				</a>
-				
-				<a href="#" id="configuracion" class="quincePixeles ">
-					<figure class="quincePixeles" >
-						<img id="imagenConfig" src="objetos/7-06.png">
-					</figure>Configuracion
-				</a>
-			</div>
-			<!-- Fin Cerrar y Config sidebar -->
-		</div>
-		<!--Contenido Pagina-->
+		<!--INICIO CONTENIDO PAGINA-->
 		<div id="contenidoPagina" class="quincePixeles contenidoPaginaMin">
-			<div id="centrado" class="quincePixeles centradoMin">
-				<div id="contenidoSuperior" class="quincePixeles">
-					<figure id="logo" class="quincePixeles" >
-						<img id="imgLogo" src="objetos/logo-07.png">
-					</figure>
-				</div>
-				<figure id="pizzaimg" class="quincePixeles" >
-					<img id="imgPizza" src="objetos/pizza-08.png">
-				</figure>
-				<div id="linea" class="quincePixeles">
-					<hr id="lineaDesplazamiento" class="quincePixeles"/>	
-					<div class="circleLeft quincePixeles"></div>
-					<p id="tamMasa" class="quincePixeles">Tamaño y masa</p>
-					<div class="circleRight quincePixeles"></div>
-					<p id="salQueso" class="quincePixeles">Salsa y queso</p>
-					<div class="circleCenter quincePixeles"></div>
-					<p id="ingre" class="quincePixeles">Ingredientes</p>
-				</div>
-				<div class="quincePixeles">
-					<p id="tamano" class="quincePixeles">Tamaño:</p>
-					<select id="selectTamano" class="quincePixeles">
-					  <option value="volvo">Chica</option>
-					  <option value="saab">Mediana</option>
-					  <option value="mercedes">Grande</option>					  
-					</select>
-				</div>
-				<div class="quincePixeles">
-					<p id="masa" class="quincePixeles">Masa:</p>
-					<select id="selectMasa" class="quincePixeles">
-					  <option value="volvo">Original</option>
-					  <option value="saab">Mediana</option>
-					  <option value="mercedes">Grande</option>					  
-					</select>					
-				</div>
-				<div class="quincePixeles">
-					<button id="botonAceptar" class="quincePixeles">Aceptar</button>
-				</div>
-			</div>
-			
+			<div id="centrado" class="quincePixeles centradoMin"></div>
 		</div>
+		<!--FIN CONTENIDO PAGINA-->
 	</div>
 		
 	</body>

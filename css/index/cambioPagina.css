@@ -1,0 +1,95 @@
+.circleLeftNo {
+  position: absolute;
+  left: 17em;
+  top: 16.012em;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 100%;
+  color: #036591;
+  line-height: 500px;
+  text-align: center;
+  background: #036591;
+  cursor: pointer;
+}
+.circleCenterSi {
+  position: absolute;
+  top: 16.225em;
+  left: 40.81em;
+  bottom: 43.774em;
+  right: 39.674em;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 100%;
+  color: #e11a37;
+  line-height: 500px;
+  text-align: center;
+  background: #e11a37;
+  cursor: pointer;
+}
+.circleRightSi {
+  position: absolute;
+  left: 63.248em;
+  top: 16.012em;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 100%;
+  color: #e11a37;
+  line-height: 500px;
+  text-align: center;
+  background: #e11a37;
+  cursor: pointer;
+}
+.tamMasaNo{
+  font-family: GothamBold;
+  width: 8em;
+  position: absolute;
+  top: 18.5em;
+  left: 13.76em;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer; 
+}
+.salQuesoSi{
+  font-family: GothamBold;
+  width: 8em;
+  position: absolute;
+  top: 18.5em;
+  left: 37.8em;
+  color: #e11a37;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer; 
+}
+.ingreSi{
+  font-family: GothamBold;
+  position: absolute;
+  top: 18.5em;
+  left: 61.202em;
+  color: #e11a37;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer; 
+}
+.textoSalsa{
+  font-family: GothamMedium;
+  position: absolute;
+  top:29.821em;
+  left: 56.180em;
+  color: black;
+  text-align: left;
+}
+.textoQueso{
+  font-family: GothamMedium;
+  position: absolute;
+  top:34.851em;
+  left: 55.9em;
+  color: black;
+  text-align: left;
+}
+.selec{
+ color: #4caf4c; 
+}
+.selecNo{
+ color: white; 
+}

@@ -4,27 +4,27 @@
   height: 100%;
 }
 .contenidoPaginaMin{
-    /*margin-left:25%;*/ 
     position: absolute;
     top: 0;
     left: 15.354em;
     width: 80.46em;
-    height: 100%; 
-    /*margin-left: 15.33em;*/
+    height: 100%;
+
 }
 .contenidoPaginaMax{
-    /*margin-left:25%;*/ 
     position: absolute;
     top: 0;
     left: 3.687em;
     width: 92.312em;
     height: 100%; 
-    /*margin-left: 15.33em;*/
+    margin-left: 5.86em;
+    
 }
 .centradoMin{
     position: relative;
-    width: 80.46em;
+    width: 80.64em;
     height:100%;
+    align-content: center;
 
 }
 .centradoMax{
@@ -34,7 +34,7 @@
 
 }
 #linea{
-    /*position: relative; */
+    
 }
 #lineaDesplazamiento{
   background: #e11a37;
@@ -57,10 +57,12 @@
   line-height: 500px;
   text-align: center;
   background: #e11a37;
+  cursor: pointer;
 }
-#tamMasa{
+.tamMasa{
   font-family: GothamBold;
- position: absolute;
+  position: absolute;
+  width: 8em;
   top: 18.5em;
   left: 13.76em;
   color: #e11a37;
@@ -79,13 +81,15 @@
   line-height: 500px;
   text-align: center;
   background: #036591;
+  cursor: pointer;
 }
-#salQueso{
+.salQueso{
   font-family: GothamBold;
- position: absolute;
+  width: 8em;
+  position: absolute;
   top: 18.5em;
-  left: 38.9em;
-  color: #e11a37;
+  left: 37.8em;
+  color: black;
   text-align: center;
   cursor: pointer; 
 }
@@ -102,17 +106,18 @@
   line-height: 500px;
   text-align: center;
   background: #036591;
+  cursor: pointer;
 }
-#ingre{
+.ingre{
   font-family: GothamBold;
  position: absolute;
   top: 18.5em;
   left: 61.202em;
-  color: #e11a37;
+  color: black;
   text-align: center;
   cursor: pointer; 
 }
-#tamano{
+.textoTamano{
   font-family: GothamMedium;
  position: absolute;
   top:29.821em;
@@ -120,7 +125,7 @@
   color: black;
   text-align: left;
 }
-#selectTamano{
+.selectTamano{
  position: absolute;
   top:28.728em;
   left: 61.893em;
@@ -130,17 +135,18 @@
   text-align: center;
   border-radius: 0.5em;
   border: none;
+  cursor: pointer;
   background: #036591;
 }
-#masa{
+.textoMasa{
   font-family: GothamMedium;
- position: absolute;
+  position: absolute;
   top:34.851em;
   left: 56.063em;
   color: black;
   text-align: left;
 }
-#selectMasa{
+.selectMasa{
  position: absolute;
   top:34.046em;
   left: 61.893em;
@@ -150,9 +156,10 @@
   text-align: center;
   border-radius: 0.5em;
   border: none;
+  cursor: pointer;
   background: #036591;
 }
-#botonAceptar{
+.botonContinuarMasa{
  position: absolute;
   top:40.547em;
   left: 54.307em;
@@ -162,8 +169,10 @@
   text-align: center;
   border-radius: 0.5em;
   border: none;
+  cursor: pointer;
   background: #4caf4c;
 }
+
 #logo{
   position: absolute;
   top: 5.178em;
@@ -173,12 +182,18 @@
   width: 6.522em;
  height:6.164em;
 }
-#pizzaimg{
+.pizzaimgMax{
   position: absolute;
   left: 4.195em;
   top: 25.525em;
 }
-#imgPizza{
+.imgPizzaMax{
   width: 42.62em;
   height: 20.515em;
+}
+
+.textoBoton{
+  font-family: GothamMedium;
+  text-align: center;
+  padding-top: 0.944em;
 }

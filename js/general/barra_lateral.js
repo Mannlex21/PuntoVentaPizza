@@ -57,12 +57,10 @@ function ocultarSliderbar() {
 	sidebarMin.setAttribute('class','quincePixeles sidebarMin');
 	
 	var contenidoPagina = document.getElementById('contenidoPagina');
-	contenidoPagina.setAttribute('class','quincePixeles');
-	$("#contenidoPagina").addClass("contenidoPaginaMax");
+	contenidoPagina.setAttribute('class','quincePixeles contenidoPaginaMax');
 	
 	var centrado = document.getElementById('centrado');
-	centrado.setAttribute('class','quincePixeles');
-	$("#centrado").addClass("centradoMax");
+	centrado.setAttribute('class','quincePixeles centradoMax');
 
 	figExpandir.appendChild(imgExpandir);
 	figConfig.appendChild(imgConfig);
@@ -80,6 +78,7 @@ function ocultarSliderbar() {
 	sidebarMin.appendChild(menu);
 	sidebarMin.appendChild(inferiorSidebar);
 	contenedorPrincipal.appendChild(sidebarMin);
+	coloresBarraMin();
 	cargado();
 }
 function mostrarSliderbar(){
@@ -87,12 +86,10 @@ function mostrarSliderbar(){
 	var contenedorPrincipal = document.getElementById('contenedorPrincipal');
 	
 	var centrado = document.getElementById('centrado');
-	centrado.setAttribute('class','quincePixeles');
-	$("#centrado").addClass("centradoMin");
+	centrado.setAttribute('class','quincePixeles centradoMin');
 
 	var contenidoPagina = document.getElementById('contenidoPagina');
-	contenidoPagina.setAttribute('class','quincePixeles');
-	$("#contenidoPagina").addClass("contenidoPaginaMin");
+	contenidoPagina.setAttribute('class','quincePixeles contenidoPaginaMin');
 	
 	var sidebarMax = document.createElement('div');
 	sidebarMax.setAttribute('id', 'sidebar');
@@ -147,6 +144,7 @@ function mostrarSliderbar(){
 	figPromociones.setAttribute("class","quincePixeles");
 
 	var imgPromociones = document.createElement("img");
+	imgPromociones.setAttribute('id','imgPromocionesBarra');
 	imgPromociones.setAttribute("src","objetos/1-06.png");
 
 	var alimentos = document.createElement("a");
@@ -161,6 +159,7 @@ function mostrarSliderbar(){
 	figAlimentos.setAttribute("class","quincePixeles");
 
 	var imgAlimentos = document.createElement("img");
+	imgAlimentos.setAttribute('id','imgAlimentosBarra');
 	imgAlimentos.setAttribute("src","objetos/4-06.png")
 
 	var pizza  = document.createElement("a");
@@ -175,6 +174,7 @@ function mostrarSliderbar(){
 	figPizza.setAttribute("class","quincePixeles");
 
 	var imgPizza = document.createElement("img");
+	imgPizza.setAttribute('id','imgPizzaBarra');
 	imgPizza.setAttribute("src","objetos/6-06.png");
 
 	var otros  = document.createElement("a");
@@ -189,6 +189,7 @@ function mostrarSliderbar(){
 	figOtros.setAttribute("class","quincePixeles");
 
 	var imgOtros = document.createElement("img");
+	imgOtros.setAttribute('id','imgOtrosBarra');
 	imgOtros.setAttribute("src","objetos/4-06.png")
 
 	var bebidas  = document.createElement("a");
@@ -203,6 +204,7 @@ function mostrarSliderbar(){
 	figBebidas.setAttribute("class","quincePixeles");
 
 	var imgBebidas = document.createElement("img");
+	imgBebidas.setAttribute('id','imgBebidasBarra');
 	imgBebidas.setAttribute("src","objetos/3-06.png");
 
 	var miCarrito  = document.createElement("a");
@@ -217,6 +219,7 @@ function mostrarSliderbar(){
 	figCarrito.setAttribute("class","quincePixeles");
 
 	var imgCarrito = document.createElement("img");
+	imgCarrito.setAttribute('id','imgCarritoBarra');
 	imgCarrito.setAttribute("src","objetos/2-06.png");
 //-------------------------------------------------------------
 //Sidebar inferior
@@ -253,5 +256,43 @@ function mostrarSliderbar(){
 	sidebarMax.appendChild(menu);
 	sidebarMax.appendChild(inferiorSidebar);
 	contenedorPrincipal.appendChild(sidebarMax);
+	coloresBarraMax();
 	cargado();
+}
+function coloresBarraMax() {	
+	var span_Text = document.getElementById("bandera").innerText;
+	console.log(span_Text);
+	if (span_Text==="0") {
+		cambiarColorPromociones();
+	}
+	if (span_Text==="1") {
+		cambiarColorPizza();
+	}
+	if (span_Text==="2") {
+		cambiarColorOtros();
+	}
+	if (span_Text==="3") {
+		cambiarColorBebidas();
+	}
+	if (span_Text==="4") {
+		cambiarColorCarrito();
+	}
+
+}
+function coloresBarraMin() {	
+	var span_Text = document.getElementById("bandera").innerText;
+	console.log(span_Text);
+	if (span_Text==="0") {
+		var imgPromociones = document.getElementById('imagenPromociones');
+		imgPromociones.setAttribute('src','objetos/9-06.png');
+	}
+	if (span_Text==="1" || span_Text==="2" || span_Text==="3") {
+		var imgAlimentos = document.getElementById('imagenAlimentos');
+		imgAlimentos.setAttribute('src','objetos/11-06.png');
+	}
+	if (span_Text==="4") {
+		var imgCarrito = document.getElementById('imagenCarrito');
+		imgCarrito.setAttribute('src','objetos/14-06.png');
+	}
+
 }

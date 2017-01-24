@@ -72,9 +72,6 @@ ul{
     padding-bottom: 10px;
     padding-left: 0;   
 }
-/*#sidebar:hover{
-    left :0px;
-}*/
 
 .liInferior{
     padding-top: 0;
@@ -127,7 +124,8 @@ ul{
     font-family: GothamMedium;
     top: 5.4em;
     left: 3.61em;
-    color: #4caf4c; 
+    cursor: pointer;
+    /*color: #4caf4c;*/ 
 }
 #imagenAlimentos{
  position: absolute;
@@ -140,7 +138,7 @@ ul{
     position: absolute;
     top: 8.584em;
     left: 5.549em;
-    color: #4caf4c; 
+    /*color: #4caf4c; */
 }
 #imagenPizza{
  position: absolute;
@@ -202,5 +200,10 @@ img{
     bottom: 3em;
     left: 0.8em;
     cursor: pointer;  
+}
+.bandera{
+  position: absolute;
+  left: 30em;
+  top: 20em; 
 }
 
