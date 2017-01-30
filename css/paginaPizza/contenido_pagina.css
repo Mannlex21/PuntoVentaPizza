@@ -137,6 +137,7 @@
   border: none;
   cursor: pointer;
   background: #036591;
+  z-index: 101;
 }
 .textoMasa{
   font-family: GothamMedium;
@@ -196,4 +197,134 @@
   font-family: GothamMedium;
   text-align: center;
   padding-top: 0.944em;
+}
+.menuTam{
+  box-sizing: border-box;
+  position: absolute;
+  top:22.728em;
+  left: 61.893em;
+  width: 14.2em;
+  height: 10em;
+  background: #036591;
+  border-radius: 5%;
+  z-index: 102;
+  border: 1px solid;
+  border-color: black;
+  overflow-y: scroll;
+}
+.menuTipo{
+  box-sizing: border-box;
+  position: absolute;
+  top:30.728em;
+  left: 61.893em;
+  width: 14.2em;
+  height: 10em;
+  background: #036591;
+  border-radius: 5%;
+  z-index: 102;
+  border: 1px solid;
+  border-color: black;
+  overflow-y: scroll;
+}
+.menuSalsa{
+  box-sizing: border-box;
+  position: absolute;
+  top:22.728em;
+  left: 61.893em;
+  width: 14.2em;
+  height: 10em;
+  background: #036591;
+  border-radius: 5%;
+  z-index: 102;
+  border: 1px solid;
+  border-color: black;
+  overflow-y: scroll;
+}
+.menuQueso{
+  box-sizing: border-box;
+  position: absolute;
+  top:30.728em;
+  left: 61.893em;
+  width: 14.2em;
+  height: 10em;
+  background: #036591;
+  border-radius: 5%;
+  z-index: 102;
+  border: 1px solid;
+  border-color: black;
+  overflow-y: scroll;
+}
+.sombraMenuMin{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 15.354em;
+  opacity: 0.3;
+  background: grey;
+  z-index: 101;
+}
+.sombraMenuMax{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:3.687em;
+  opacity: 0.5;
+  opacity: 0.3;
+  background: grey;
+  z-index: 101;
+}
+
+.tamanoMasa{
+  font-family: GothamMedium;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 3em;
+  border-bottom: 0.01px solid cyan;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  z-index: 101;
+}
+.tipoMasa{
+  font-family: GothamMedium;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 3em;
+  border-bottom: 0.01px solid cyan;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  z-index: 101;
+}
+.tipoSalsa{
+  font-family: GothamMedium;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 3em;
+  border-bottom: 0.01px solid cyan;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  z-index: 101;
+}
+.tipoQueso{
+  font-family: GothamMedium;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 3em;
+  border-bottom: 0.01px solid cyan;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  padding-top: 1em;
+  z-index: 101;
 }

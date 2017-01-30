@@ -1,0 +1,143 @@
+.contentIngre{
+	position: absolute;
+	top:24.03em;
+	left: 37.549em;
+	box-sizing: border-box;
+	width: 41em;
+	height: 16em;
+	padding: 0.5em;
+	/*border: 1px solid red;*/
+
+}
+.caja1ingre{
+	position: relative;
+	box-sizing: border-box;
+	padding: 1em;
+	/*border: 1px solid red;*/
+	width: 100%;
+	height: 100%;
+	float: left;
+	text-align: center;	
+
+}
+.caja8ingre{
+	position: relative;
+	box-sizing: border-box;
+	padding: 1em;
+	/*border: 1px solid red;*/
+	width: 50%;
+	float: left;
+	text-align: center;
+
+}
+.caja16ingre{
+	position: relative;
+	box-sizing: border-box;
+	padding: 1em;
+	/*border: 1px solid red;*/
+	width: 33%;
+	float: left;
+	text-align: center;	
+}
+.caja24ingre{
+	position: relative;
+	box-sizing: border-box;
+	padding: 1em;
+	/*border: 1px solid red;*/
+	width: 25%;
+	float: left;
+	text-align: center;	
+}
+
+
+.pizzaimgMin{
+	position: absolute;
+	top: 25.032em;
+	left: 2.862;
+	
+}
+.imgPizzaMin{
+	width: 34.422em;
+	height: 16.568em;
+}
+.botonContinuarIngre{
+	position: absolute;
+  	top: 43.638em;
+	left:46.54em;
+  	width: 21.6em;
+  	height: 2.8em;
+  	color: white;
+  	text-align: center;
+  	border-radius: 0.5em;
+  	border: none;
+  	cursor: pointer;
+  	background: #4caf4c;
+}
+.pRadio{
+	font-family: GothamMedium;
+	box-sizing: border-box;
+	position: absolute;
+	top: 47%;
+	left: 45%;
+	width: 85%;
+	height: 100%;
+	float: left;
+	text-align: left;
+}
+.pRadio1{
+	font-family: GothamMedium;
+	box-sizing: border-box;
+	position: absolute;
+	top: 47%;
+	left: 45%;
+	width: 85%;
+	height: 100%;
+	float: left;
+	text-align: left;
+}
+.pRadio16{
+	font-family: GothamMedium;
+	box-sizing: border-box;
+	position: absolute;
+	top: 47%;
+	left: 25%;
+	width: 85%;
+	height: 100%;
+	float: left;
+	text-align: left;
+}
+.radio{
+	position: absolute;
+	left: 38%;
+	top: 47%;
+	text-align: center;	
+}
+.radio1{
+	position: absolute;
+	left: 40%;
+	top: 47%;
+	text-align: center;	
+}
+.radio16{
+	position: absolute;
+	left: 15%;
+	top: 47%;
+	text-align: center;	
+}
+.pRadio24{
+	font-family: GothamMedium;
+	box-sizing: border-box;
+	position: absolute;
+	top: 47%;
+	left: 17%;
+	width: 85%;
+	height: 100%;
+	float: left;
+	text-align: left;
+}
+.radio24{
+	position: absolute;
+	left: 5%;
+	top: 47%;
+	text-align: center;	
+}

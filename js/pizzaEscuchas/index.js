@@ -1,9 +1,16 @@
+var pedidoKey;
 $(document).ready(function() {
 	$(document).on('click', '#pizza', function(){
 		document.getElementById("bandera").textContent="1";
+		document.getElementById("centrado").innerHTML='';
 		cargarPaginaAlimentosPizza();
 		cambiarColorPizza();
-	});	
+
+	});		
+	$(document).on('click', '#sombraMenu', function(){
+		quitarMenus();
+	});
+	
 });
 function cambiarColorPizza() {
 	//PROMOCIONES SELECCIONADA
@@ -36,4 +43,22 @@ function cambiarColorPizza() {
 	carrito.setAttribute('class','quincePixeles selecNo');
 	var imgCarrito = document.getElementById('imgCarritoBarra');
 	imgCarrito.setAttribute('src','objetos/2-06.png');
+}
+function quitarMenus() {
+	$('#menuSalsa').remove();
+	$('#menuQueso').remove();
+	$('#menuTam').remove();
+	$('#menuTipo').remove();
+	$('#sombraMenu').remove();
+	cargado();
+}
+function animacionSobre(idTam) {
+	var sobreElement = document.getElementById(idTam);
+	sobreElement.setAttribute("style","background:#2A8DBA");
+	cargado();
+}
+function animacionFuera(idTam) {
+	var sobreElement = document.getElementById(idTam);
+	sobreElement.setAttribute("style","background:#036591");
+	cargado();
 }

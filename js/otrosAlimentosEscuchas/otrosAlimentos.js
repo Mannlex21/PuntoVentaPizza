@@ -14,13 +14,17 @@ $(document).ready(function() {
       $('#divBarraBusqueda').removeClass('divBarraBusqueda-fijo');
     }
   });
-
+	var idProducto;
 	$(document).on('mouseenter', '.producto', function(){
-		//console.log(""+this.id);
 		mostrarMenuCompra(this.id);
+		idProducto = this.id;
 	});
 	$(document).on('mouseleave', '.producto', function(){
 		quitarMenuCompra(this.id);
+	});
+
+	$(document).on('click', '.agregarCarrito', function(){
+		agregarProductoCarrito(idProducto);
 	});
 });
 function cambiarColorOtros() {
