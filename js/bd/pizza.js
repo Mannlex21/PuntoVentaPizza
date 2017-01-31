@@ -15,7 +15,11 @@ var otrosJSON = [];
 var productosArray = {
 	'precioTotal':0
 }	
-var producto = {};
+var producto = {
+	'nombre':'',
+	'cantidad':0,
+	'precio':0
+};
 
 var masas = [];
 var masa = {
