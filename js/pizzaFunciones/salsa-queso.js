@@ -122,12 +122,16 @@ function mostrarMenuSalsa() {
 	datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/productos/pizza/salsa').orderByKey();
 	datos.on("child_added", function(salsa) {
 		var tipoSalsa = document.createElement('div');
-		var t = document.createTextNode(salsa.val());
+		var t = document.createTextNode(salsa.val().nombre);
 		tipoSalsa.setAttribute("id",'tipoSalsa'+contador);
 		tipoSalsa.setAttribute('class','quincePixeles tipoSalsa');
 		tipoSalsa.appendChild(t);
 		contador=contador+1;
-		menuSalsa.appendChild(tipoSalsa);		
+		menuSalsa.appendChild(tipoSalsa);
+
+		tipoSalsaArray = {'id':salsa.getKey(),'nombre':salsa.val().nombre,'precio':salsa.val().precio}
+		salsas.push(tipoSalsaArray);
+		console.log(salsas);
 		cargado();
 	});
 	centrado.appendChild(sombraMenu);
@@ -140,7 +144,6 @@ function selecSalsa(idSalsa) {
 	var botonSalsa = document.getElementById("botonSalsa");
 	botonSalsa.setAttribute("value",t.textContent);
 	pizzaJSON.salsa= t.textContent;
-	console.log(pizzaJSON);
 	quitarMenus();
 }
 
@@ -159,12 +162,16 @@ function mostrarMenuQueso() {
 	datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/productos/pizza/queso').orderByKey();
 	datos.on("child_added", function(queso) {
 		var tipoQueso = document.createElement('div');
-		var t = document.createTextNode(queso.val());
+		var t = document.createTextNode(queso.val().nombre);
 		tipoQueso.setAttribute("id",'tipoQueso'+contador);
 		tipoQueso.setAttribute('class','quincePixeles tipoQueso');
 		tipoQueso.appendChild(t);
 		contador=contador+1;
-		menuQueso.appendChild(tipoQueso);		
+		menuQueso.appendChild(tipoQueso);	
+
+		tipoQuesoArray = {'id':queso.getKey(),'nombre':queso.val().nombre,'precio':queso.val().precio}
+		quesos.push(tipoQuesoArray);
+
 		cargado();
 	});
 	centrado.appendChild(sombraMenu);
@@ -191,6 +198,16 @@ function confirmarSalsaQueso(){
 		if (pizzaJSON.queso==='') {
 			console.log("Seleccione queso");		
 		}else{
+			for (var i = 0; i < salsas.length; i++) {
+				if(salsas[i].nombre === pizzaJSON.salsa){
+					pizzaJSON.precioTotal=pizzaJSON.precioTotal+salsas[i].precio;
+				}
+			}
+			for (var i = 0; i < quesos.length; i++) {
+				if(quesos[i].nombre === pizzaJSON.queso){
+					pizzaJSON.precioTotal=pizzaJSON.precioTotal+quesos[i].precio;
+				}
+			}
 			seleccionarIngredientes();
 		}
 	}

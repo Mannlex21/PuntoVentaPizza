@@ -40,6 +40,9 @@ function agregarIngredientes() {
 		var contadorIngre = 0;
 		datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/productos/pizza/ingredientes').orderByKey();
 		datos.on("child_added", function(ingredientes) {
+			
+			ingredienteArray = {'id':ingredientes.getKey(),'nombre':ingredientes.val().nombre,'precio':ingredientes.val().precio}
+			ingredientesArray.push(ingredienteArray);
 			if (cantIngredientes ===1) {
 				//cuando sea uno
 				var divRadio;
@@ -57,8 +60,8 @@ function agregarIngredientes() {
 
 				var pRadio = document.createElement('p');
 				pRadio.setAttribute('for','radio'+contadorIngre);
-				pRadio.setAttribute('class','quincePixeles pRadio1');
-				var textoRadio =  document.createTextNode(ingredientes.val());
+				pRadio.setAttribute('class','quincePixeles pRadio1 textoRadio');
+				var textoRadio =  document.createTextNode(ingredientes.val().nombre);
 				pRadio.appendChild(textoRadio);
 
 				divRadio.appendChild(radio);
@@ -88,8 +91,8 @@ function agregarIngredientes() {
 
 					var pRadio = document.createElement('p');
 					pRadio.setAttribute('for','radio'+contadorIngre);
-					pRadio.setAttribute('class','quincePixeles pRadio');
-					var textoRadio =  document.createTextNode(ingredientes.val());
+					pRadio.setAttribute('class','quincePixeles pRadio textoRadio');
+					var textoRadio =  document.createTextNode(ingredientes.val().nombre);
 					pRadio.appendChild(textoRadio);
 
 					divRadio.appendChild(radio);
@@ -121,8 +124,8 @@ function agregarIngredientes() {
 
 					var pRadio = document.createElement('p');
 					pRadio.setAttribute('for','radio'+contadorIngre);
-					pRadio.setAttribute('class','quincePixeles pRadio16');
-					var textoRadio =  document.createTextNode(ingredientes.val());
+					pRadio.setAttribute('class','quincePixeles pRadio16 textoRadio');
+					var textoRadio =  document.createTextNode(ingredientes.val().nombre);
 					pRadio.appendChild(textoRadio);
 
 					divRadio.appendChild(radio);
@@ -153,7 +156,7 @@ function agregarIngredientes() {
 					var pRadio = document.createElement('p');
 					pRadio.setAttribute('for','radio'+contadorIngre);
 					pRadio.setAttribute('class','quincePixeles pRadio24 textoRadio');
-					var textoRadio =  document.createTextNode(ingredientes.val());
+					var textoRadio =  document.createTextNode(ingredientes.val().nombre);
 					pRadio.appendChild(textoRadio);
 
 					divRadio.appendChild(radio);
@@ -201,22 +204,46 @@ function confirmarIngre() {
 	var verificarVacios=0;
 	for (var i = 0; i < checkbox.length; i++) {
 	    if (checkbox[i].type === 'checkbox' && checkbox[i].checked) {
-	        value = ""+checkbox[i].value;
+	        value = ""+checkbox[i].value;	       
 	        //console.log(checkbox[i].value);
 	        //console.log(pRadios[i].innerHTML);
 	        pizzaJSON['ingredientes'][value] = pRadios[i].innerHTML;
-	        //console.log(pizzaJSON[0]);
+	        for (var x = 0; x < ingredientesArray.length; x++) {
+		        if(pRadios[i].innerHTML===ingredientesArray[x].nombre){
+		        	pizzaJSON.precioTotal=pizzaJSON.precioTotal+ingredientesArray[x].precio;
+		        }
+	    	}	        
+
 	        verificarVacios=verificarVacios+1;
 	    }
+	    
 	}
-	console.log(verificarVacios);
 	if(verificarVacios>0){
 		console.log("Si hay ingre");
 		var keyPedidoPizza = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/pizza').child('pedidoPizza').push().key;
 		var updates = {};
 		updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/pizza/'+keyPedidoPizza] = pizzaJSON;
+		pizzaJSON = 
+			{
+				'tamano':'',
+				'masa':'',
+				'salsa':'',
+				'queso':'',
+				'ingredientes':{},
+				'precio':0
+			};	
+			var onComplete = function(error) {
+			  if (error) {
+			    console.log('Synchronization failed');
+			  } else {
+			    console.log('Synchronization succeeded');
+			    document.getElementById("centrado").innerHTML='';
+				document.getElementById("bandera").textContent="0";
+				cargarPaginaAlimentosPizza();
+			  }
+			};
+		return firebase.database().ref().update(updates,onComplete);
 
-		return firebase.database().ref().update(updates);
 	}else{
 		console.log("No hay ingre");
 		//SI NO HAY INGREDIENTES GUARDADOS, MANDARA UN MENSAJE

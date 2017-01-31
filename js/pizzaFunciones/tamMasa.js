@@ -118,12 +118,15 @@ function mostrarMenuTam() {
 	datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/productos/pizza/tamaño').orderByKey();
 	datos.on("child_added", function(tamaño) {
 		var masa = document.createElement('div');
-		var t = document.createTextNode(tamaño.val());
+		var t = document.createTextNode(tamaño.val().nombre);
 		masa.setAttribute("id",'tamMasa'+contador);
 		masa.setAttribute('class','quincePixeles tamanoMasa');
 		masa.appendChild(t);
 		contador=contador+1;
-		menuTam.appendChild(masa);		
+		menuTam.appendChild(masa);			
+
+		tamañoMasa = {'id':tamaño.getKey(),'nombre':tamaño.val().nombre,'precio':tamaño.val().precio}
+		tamañosMasa.push(tamañoMasa);
 		cargado();
 	});
 	centrado.appendChild(sombraMenu);
@@ -145,36 +148,36 @@ function mostrarMenuMasa() {
 	datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/productos/pizza/masa').orderByKey();
 	datos.on("child_added", function(tipoMasa) {
 		var masa = document.createElement('div');
-		var t = document.createTextNode(tipoMasa.val());
+		var t = document.createTextNode(tipoMasa.val().nombre);
 		masa.setAttribute("id",'tipoMasa'+contador);
 		masa.setAttribute('class','quincePixeles tipoMasa');
 		masa.appendChild(t);
 		contador=contador+1;
 		menuTipo.appendChild(masa);		
+		
+		masa = {'id':tipoMasa.getKey(),'nombre':tipoMasa.val().nombre,'precio':tipoMasa.val().precio}
+		masas.push(masa);
 		cargado();
 	});
+
 	centrado.appendChild(sombraMenu);
 	centrado.appendChild(menuTipo);
 	cargado();
 }
 function selecTamanoMasa(idTamano) {
-	console.log(idTamano);
 	var t = document.getElementById(idTamano);
 	document.getElementById("pboton1").innerHTML = t.textContent;;
 	var botonTam = document.getElementById("botonTam");
 	botonTam.setAttribute("value",t.textContent);
 	pizzaJSON.tamano = t.textContent;
-	console.log(pizzaJSON);
 	quitarMenus();
 }
 function selecTipoMasa(idTamano) {
-	console.log(idTamano);
 	var t = document.getElementById(idTamano);
 	document.getElementById("pboton2").innerHTML = t.textContent;
 	var botonMasa = document.getElementById("botonMasa");
 	botonMasa.setAttribute("value",t.textContent);
 	pizzaJSON.masa = t.textContent;
-	console.log(pizzaJSON);
 	quitarMenus();
 }
 
@@ -189,6 +192,17 @@ function confirmarTamMasa() {
 		if (pizzaJSON.masa==='') {
 			console.log("Seleccione masa");		
 		}else{
+			for (var i = 0; i < tamañosMasa.length; i++) {
+				if(tamañosMasa[i].nombre === pizzaJSON.tamano){
+					pizzaJSON.precioTotal=pizzaJSON.precioTotal+tamañosMasa[i].precio;
+				}
+			}
+			for (var i = 0; i < masas.length; i++) {
+				if(masas[i].nombre === pizzaJSON.masa){
+					pizzaJSON.precioTotal=pizzaJSON.precioTotal+masas[i].precio;
+					console.log(pizzaJSON);
+				}
+			}
 			seleccionarSalsaQueso();
 		}
 	}

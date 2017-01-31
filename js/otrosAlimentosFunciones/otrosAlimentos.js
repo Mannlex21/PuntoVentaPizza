@@ -145,6 +145,7 @@ function quitarMenuCompra(idProducto) {
 		
 }
 function agregarProductoCarrito(idProducto) {
+	
 	var keyPizzeria1= "mFZZOOkT0EdExK5ld2HnzPAoIOm1";
 	datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/productos/otros').orderByKey();
 	datos.on("child_added", function(otrosAlimentos) {
@@ -155,30 +156,74 @@ function agregarProductoCarrito(idProducto) {
 				if(w.hasChild(localStorage.getItem("sessionKey"))){
 					datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")).orderByKey();
 					datos.once("value", function(x){
+						console.log(localStorage.getItem("sessionKey"));
 						if (x.hasChild("otrosAlimentos")) {
 						    datos = firebase.database().ref('administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos').orderByKey();
 							datos.once("value", function(r) {
+								console.log("Entro otrosAlimentos")
+								console.log(r.hasChild(valor));
 								if(r.hasChild(valor)){
+									//AQUI ENTRA CUANDO ACTUALIZA LA CANTIDAD DE UN PRODUCTO
 									var updates = {};
 									producto.nombre=r.val()[valor].nombre;
 									producto.cantidad=r.val()[valor].cantidad+1;
-									updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos/'+valor] = producto;
+									producto.precio=r.val()[valor].precio;
+
+									productosArray['precioTotal']=r.val().precioTotal+otrosAlimentos.val().precio;
+									productosArray[valor]=producto;
+
+									updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos'] = productosArray;
 									return firebase.database().ref().update(updates);
 								}else{
-									var updates = {};
+									//AQUI ENTRA CUANDO AGREGA UN PRODUCTO QUE NO EXISTE EN EL CARRITO
+									var updates = {};var update = {};
+									precioTotal={'precioTotal':0}
 									producto.nombre=otrosAlimentos.val().nombre;
 									producto.cantidad=1;
+									producto.precio=otrosAlimentos.val().precio;
+
+
+									//precioTotal['precioTotal']=r.val().precioTotal+otrosAlimentos.val().precio;
+									//productosArray[valor]=producto;
+
+									
 									updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos/'+valor] = producto;
-									return firebase.database().ref().update(updates);
+									firebase.database().ref().update(updates);		
+									update['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos/precioTotal'] = r.val().precioTotal+otrosAlimentos.val().precio;
+									firebase.database().ref().update(update);
+									
 								}
 							});
+
+					  	}else{
+					  		//AQUI ENTRA CUANDO EXISTE LA SESION, PERO NO EXISTE EL NODO otrosAlimentos
+							var updates = {};
+							producto.nombre=otrosAlimentos.val().nombre;
+							producto.cantidad=1;
+							producto.precio=otrosAlimentos.val().precio;
+
+							productosArray['precioTotal']=otrosAlimentos.val().precio;
+							productosArray[valor]=producto;
+							
+							updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos'] = productosArray;
+						    
+
+							return firebase.database().ref().update(updates);
 					  	}
 					});
 				}else{
+					//AQUI ENTRA CUANDO NO EXISTE LA SESION, CUANDO SE CREA POR PRIMERA VEZ EL PEDIDO DEL CLIENTE
+					console.log("AQUI ENTRA CUANDO NO EXISTE LA SESION, CUANDO SE CREA POR PRIMERA VEZ EL PEDIDO DEL CLIENTE");
 					var updates = {};
 					producto.nombre=otrosAlimentos.val().nombre;
 					producto.cantidad=1;
-					updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos/'+valor] = producto;
+					producto.precio=otrosAlimentos.val().precio;
+					
+					productosArray['precioTotal']=otrosAlimentos.val().precio;
+					productosArray[valor]=producto;
+					
+					updates['administrador/'+keyPizzeria1+'/pizzeria1/pedidos/'+localStorage.getItem("sessionKey")+'/otrosAlimentos'] = productosArray;
+					
 					return firebase.database().ref().update(updates);
 				}
 			});
