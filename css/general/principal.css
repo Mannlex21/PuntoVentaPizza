@@ -2,32 +2,32 @@
 
 @font-face {
   font-family: 'GothamThin';
-  src: url('/objetos/fuentes/Gotham-Thin.ttf');
+  src: url('objetos/fuentes/Gotham-Thin.ttf');
 }
 
 @font-face {
   font-family: 'GothamLight';
-  src: url('/objetos/fuentes/Gotham-Light.ttf');
+  src: url('objetos/fuentes/Gotham-Light.ttf');
 }
 
 @font-face {
   font-family: 'GothamBook';
-  src: url('/objetos/fuentes/Gotham-Book.ttf');
+  src: url('objetos/fuentes/Gotham-Book.ttf');
 }
 
 @font-face {
   font-family: 'GothamBold';
-  src: url('/objetos/fuentes/Gotham-Bold.ttf');
+  src: url('objetos/fuentes/Gotham-Bold.ttf');
 }
 
 @font-face {
   font-family: 'GothamMedium';
-  src: url('/objetos/fuentes/Gotham-Medium.ttf');
+  src: url('objetos/fuentes/Gotham-Medium.ttf');
 }
 
 @font-face {
   font-family: 'GothamBlack';
-  src: url('/objetos/fuentes/Gotham-Black.ttf');
+  src: url('objetos/fuentes/Gotham-Black.ttf');
 }
 
 /* ETIQUETAS */
